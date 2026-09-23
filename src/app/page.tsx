@@ -63,7 +63,7 @@ export default function HomePage() {
   playsInline
   preload="auto"
   aria-label="AKIK artisanal clothing collection background video"
-  className="absolute inset-0 z-0 h-full w-full object-cover"
+  className="hero-video absolute inset-0 z-0 h-full w-full object-cover"
   style={{
     objectPosition: "left top",
   }}
