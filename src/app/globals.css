@@ -74,22 +74,3 @@ body {
 
 
 
-
-
-/* Desktop and laptop hero positioning */
-@media (min-width: 768px) {
-  .hero-video {
-    object-position: 0% top;
-  }
-}
-
-/* Mobile hero positioning */
-@media (max-width: 767px) {
-  .hero-video {
-    object-position: 100% top;
-  }
-}
-
-.animate-marquee-left:hover {
-  animation-play-state: paused;
-}
