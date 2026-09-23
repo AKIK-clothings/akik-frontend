@@ -69,14 +69,14 @@ export default function HomePage() {
           {/* Mobile video */}
           <source
             media="(max-width: 767px)"
-            src="https://res.cloudinary.com/suxqbbxr/video/upload/q_auto:good,vc_auto/v1789927778/mobile_background.mp4"
+            src="https://res.cloudinary.com/suxqbbxr/video/upload/v1789927778/mobile_background.mp4"
             type="video/mp4"
           />
 
           {/* Desktop and laptop video */}
           <source
             media="(min-width: 768px)"
-            src="/windows_background.mp4"
+            src="https://res.cloudinary.com/suxqbbxr/video/upload/v1789927767/windows_background.mp4"
             type="video/mp4"
           />
 
