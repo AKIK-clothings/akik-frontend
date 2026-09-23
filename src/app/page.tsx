@@ -55,43 +55,35 @@ export default function HomePage() {
 
   {/* Responsive Background Video */}
 
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    preload="auto"
-    className="
-      absolute inset-0 z-0
-      h-full w-full
-      object-cover
+{/* Responsive Hero Video */}
+<video
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+  aria-label="AKIK artisanal clothing collection background video"
+  className="absolute inset-0 z-0 h-full w-full object-cover"
+  style={{
+    objectPosition: "left top",
+  }}
+>
+  {/* Mobile video */}
+  <source
+    media="(max-width: 767px)"
+    src="https://res.cloudinary.com/suxqbbxr/video/upload/v1789927778/mobile_background.mp4"
+    type="video/mp4"
+  />
 
-      /* Mobile positioning */
-      object-[18%_top]
+  {/* Desktop video */}
+  <source
+    media="(min-width: 768px)"
+    src="https://res.cloudinary.com/suxqbbxr/video/upload/v1789927767/windows_background.mp4"
+    type="video/mp4"
+  />
 
-      /* Desktop positioning */
-      md:object-[22%_8%]
-    "
-    aria-label="AKIK artisanal clothing collection background video"
-  >
-    {/* Mobile Cloudinary Video */}
-
-    <source
-      media="(max-width: 767px)"
-      src="https://res.cloudinary.com/suxqbbxr/video/upload/v1789927778/mobile_background.mp4"
-      type="video/mp4"
-    />
-
-    {/* Desktop Cloudinary Video */}
-
-    <source
-      media="(min-width: 768px)"
-      src="https://res.cloudinary.com/suxqbbxr/video/upload/v1789927767/windows_background.mp4"
-      type="video/mp4"
-    />
-
-    Your browser does not support video playback.
-  </video>
+  Your browser does not support video playback.
+</video>
 
   {/* Cinematic Overlay */}
 
