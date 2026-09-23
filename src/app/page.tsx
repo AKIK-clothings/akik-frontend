@@ -50,76 +50,100 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#FAF9F6] font-sans pb-20">
       {/* 1. Cinematic Hero Section with Brand Background Video (Model Face Completely Visible) */}
-      <section className="relative -mt-[52px] pt-[52px] h-[95vh] min-h-[660px] w-full overflow-hidden flex flex-col justify-end items-center text-center pb-12 sm:pb-16 md:pb-20">
-        {/*
-          Responsive background video:
-          - Mobile uses the dedicated Cloudinary portrait video.
-          - Desktop keeps the existing windows_background.mp4 file.
-          - Desktop object positioning moves the model slightly to the right.
-        */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="absolute inset-0 z-0 h-full w-full object-cover object-[50%_8%] md:object-[35%_8%]"
-          aria-label="AKIK artisanal clothing collection background video"
-        >
-          {/* Mobile video */}
-          <source
-            media="(max-width: 767px)"
-            src="https://res.cloudinary.com/suxqbbxr/video/upload/v1789927778/mobile_background.mp4"
-            type="video/mp4"
-          />
+     {/* 1. Cinematic Hero Section */}
+<section className="relative -mt-[52px] flex h-[95vh] min-h-[660px] w-full flex-col items-center justify-end overflow-hidden pb-12 pt-[52px] text-center sm:pb-16 md:pb-20">
 
-          {/* Desktop and laptop video */}
-          <source
-            media="(min-width: 768px)"
-            src="https://res.cloudinary.com/suxqbbxr/video/upload/v1789927767/windows_background.mp4"
-            type="video/mp4"
-          />
+  {/* Responsive Background Video */}
 
-          Your browser does not support video playback.
-        </video>
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="auto"
+    className="
+      absolute inset-0 z-0
+      h-full w-full
+      object-cover
 
-        {/* Subtle Bottom Vignette Overlay: Leaves the model's face completely clear & unobstructed at the top */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#141312]/90 via-black/35 to-transparent z-10 pointer-events-none" />
+      /* Mobile positioning */
+      object-[18%_top]
 
-        {/* Hero Content (Positioned at bottom so model's face is completely unobstructed) */}
-        <div className="relative z-20 max-w-4xl mx-auto px-6 text-white flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 bg-black/40 backdrop-blur-md border border-white/20 text-[#FAF9F6] text-[11px] uppercase tracking-[0.25em] font-semibold px-3.5 py-1 rounded-full mb-3 animate-fade-in shadow-md">
-            <Sparkles className="w-3 h-3 text-[#C47D5A]" />
-            <span>The Festive & Wedding Edit &apos;26</span>
-          </div>
+      /* Desktop positioning */
+      md:object-[22%_8%]
+    "
+    aria-label="AKIK artisanal clothing collection background video"
+  >
+    {/* Mobile Cloudinary Video */}
 
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal tracking-wide leading-[1.15] max-w-3xl text-balance drop-shadow-md">
-            Artisanal Grace, Handcrafted for Celebrations.
-          </h1>
+    <source
+      media="(max-width: 767px)"
+      src="https://res.cloudinary.com/suxqbbxr/video/upload/v1789927778/mobile_background.mp4"
+      type="video/mp4"
+    />
 
-          <p className="text-xs sm:text-sm text-[#FAF9F6]/90 max-w-lg mt-3 mb-6 font-light leading-relaxed drop-shadow">
-            Pure Chanderi silks, Banarasi weaves, and breathable handloom coordinates tailored with royal silhouettes.
-          </p>
+    {/* Desktop Cloudinary Video */}
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
-            <Link
-              href="/collections?collection=unstitched"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 bg-[#FAF9F6] text-[#1F1E1D] hover:bg-[#C47D5A] hover:text-white text-xs font-semibold uppercase tracking-widest rounded shadow-xl transition-all duration-300 active:scale-95"
-            >
-              <span>Explore Collection</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+    <source
+      media="(min-width: 768px)"
+      src="https://res.cloudinary.com/suxqbbxr/video/upload/v1789927767/windows_background.mp4"
+      type="video/mp4"
+    />
 
-            <Link
-              href="/collections"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 bg-black/40 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-semibold uppercase tracking-widest rounded transition-all duration-300 active:scale-95"
-            >
-              <span>View All Collections</span>
-            </Link>
-          </div>
-        </div>
-      </section>
+    Your browser does not support video playback.
+  </video>
+
+  {/* Cinematic Overlay */}
+
+  <div
+    className="
+      pointer-events-none absolute inset-0 z-10
+      bg-gradient-to-t
+      from-[#141312]/90
+      via-black/35
+      to-transparent
+    "
+  />
+
+  {/* Hero Content */}
+
+  <div className="relative z-20 mx-auto flex max-w-4xl flex-col items-center px-6 text-white">
+
+    <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#FAF9F6] shadow-md backdrop-blur-md">
+      <Sparkles className="h-3 w-3 text-[#C47D5A]" />
+
+      <span>The Festive & Wedding Edit &apos;26</span>
+    </div>
+
+    <h1 className="max-w-3xl text-balance font-serif text-3xl font-normal leading-[1.15] tracking-wide drop-shadow-md sm:text-5xl md:text-6xl">
+      Artisanal Grace, Handcrafted for Celebrations.
+    </h1>
+
+    <p className="mb-6 mt-3 max-w-lg text-xs font-light leading-relaxed text-[#FAF9F6]/90 drop-shadow sm:text-sm">
+      Pure Chanderi silks, Banarasi weaves, and breathable handloom
+      coordinates tailored with royal silhouettes.
+    </p>
+
+    <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row">
+
+      <Link
+        href="/collections?collection=unstitched"
+        className="inline-flex w-full items-center justify-center gap-2 rounded bg-[#FAF9F6] px-7 py-3 text-xs font-semibold uppercase tracking-widest text-[#1F1E1D] shadow-xl transition-all duration-300 hover:bg-[#C47D5A] hover:text-white active:scale-95 sm:w-auto"
+      >
+        <span>Explore Collection</span>
+        <ArrowRight className="h-3.5 w-3.5" />
+      </Link>
+
+      <Link
+        href="/collections"
+        className="inline-flex w-full items-center justify-center gap-2 rounded border border-white/30 bg-black/40 px-7 py-3 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur-md transition-all duration-300 hover:bg-white/20 active:scale-95 sm:w-auto"
+      >
+        <span>View All Collections</span>
+      </Link>
+
+    </div>
+  </div>
+</section>
 
       {/* 2. Signature Collections: Curated For Every Celebration */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
