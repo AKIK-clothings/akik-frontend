@@ -3,11 +3,11 @@
  * All frontend components should use these functions instead of direct fetches.
  */
 
-const RAW_API_URL = process.env.NEXT_PRIVATE_API_URL;
+const RAW_API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 if (typeof window !== "undefined" && !RAW_API_URL && process.env.NODE_ENV === "production") {
   console.error(
-    "⚠️ Configuration Warning: NEXT_PRIVATE_API_URL is missing in production environment. API requests may fail."
+    "⚠️ Configuration Warning: NEXT_PUBLIC_API_URL is missing in production environment. API requests may fail."
   );
 }
 
