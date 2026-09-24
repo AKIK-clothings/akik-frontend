@@ -71,6 +71,7 @@ body {
 }
 
 
-
-
+.animate-marquee-left:hover {
+  animation-play-state: paused;
+}
 
