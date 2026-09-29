@@ -66,7 +66,7 @@ export default function HomePage() {
 
         {/* Fallback image shown while the video is loading */}
         <Image
-          src="/home_background.jpg"
+          src="/home_background.png"
           alt=""
           fill
           priority
